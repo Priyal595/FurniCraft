@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Components</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .navbar {
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 1rem;
+    }
+    
+    .navbar-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 4rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #3b82f6;
+    }
+    
+    .main-content {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    
+    .footer {
+      background-color: #111827;
+      color: white;
+      padding: 2.5rem 1rem;
+    }
+    
+    .footer-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+    
+    .footer-section h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-section p {
+      color: #9ca3af;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (Header) -->
+  <nav class="navbar">
+    <div class="navbar-content">
+      <div class="logo">FurniCraft</div>
+      <div>Navigation Links</div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Test Page</h1>
+    <p>This is a test page to check if the header (navbar) and footer components are visible.</p>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>FurniCraft</h3>
+        <p>Premium furniture for your home and office. Quality craftsmanship since 2010.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <p>Home</p>
+        <p>Products</p>
+        <p>About Us</p>
+        <p>Contact</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>123 Furniture St, Design District, NY 10001</p>
+        <p>+1 (555) 123-4567</p>
+        <p>info@furnicraft.com</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Subscribe to our newsletter for updates and promotions.</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 FurniCraft. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
