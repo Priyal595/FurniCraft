@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent } from '../components/ui/card'; // changed from '@/components/ui/card'
+import { Card, CardContent } from '../components/ui/card';
 import { Award, Users, Globe, Recycle } from 'lucide-react';
 
 const About = () => {
@@ -33,7 +33,7 @@ const About = () => {
         <section className="text-center mb-16">
           <h1 className="text-5xl font-bold text-primary mb-6">About FurniCraft</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            For over two decades, FurniCraft has been at the forefront of furniture design, 
+            For over a decade, FurniCraft has been at the forefront of furniture design, 
             creating pieces that transform houses into homes and spaces into sanctuaries.
           </p>
         </section>
@@ -45,8 +45,8 @@ const About = () => {
               <h2 className="text-3xl font-bold text-primary mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded in 2001 by furniture artisan Michael Craft, FurniCraft began as a small 
-                  workshop in Portland, Oregon. What started as a passion project to create 
+                  Founded in 2010 by furniture artisan Raghav Sharma, FurniCraft began as a small 
+                  workshop in Punjab, India. What started as a passion project to create 
                   beautiful, functional furniture has grown into a trusted brand serving customers 
                   across the globe.
                 </p>
@@ -108,23 +108,18 @@ const About = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[{
-                name: 'Michael Craft',
+                name: 'Raghav Sharma',
                 role: 'Founder & CEO',
                 image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop',
                 bio: 'Visionary leader with 25+ years in furniture design and craftsmanship.'
               },
               {
-                name: 'Sarah Johnson',
+                name: 'Priyal Singh',
                 role: 'Head of Design',
                 image: 'https://images.unsplash.com/photo-1494790108755-2616b612b830?w=300&h=300&fit=crop',
                 bio: 'Award-winning designer specializing in modern and contemporary furniture.'
               },
-              {
-                name: 'David Chen',
-                role: 'Master Craftsman',
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop',
-                bio: 'Expert woodworker ensuring every piece meets our quality standards.'
-              }
+              
             ].map((member, index) => (
               <Card key={index} className="text-center">
                 <CardContent className="p-6">

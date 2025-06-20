@@ -47,12 +47,12 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Visit Our Showroom',
-      details: ['123 Furniture Ave', 'Portland, OR 97201', 'United States']
+      details: ['123 Furniture Ave', 'Jalandhar, OR 144008', 'India']
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543', 'Toll-free: 1-800-FURNI']
+      details: ['+91 797-311-7167', '+91 828-482-6891', 'Toll-free: 1-800-FURNI']
     },
     {
       icon: Mail,
@@ -155,7 +155,7 @@ const Contact = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+91 123-456-7980"
                       />
                     </div>
                     <div>

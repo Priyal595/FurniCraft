@@ -12,6 +12,8 @@ import Login     from './pages/Login';
 import Cart      from './pages/Cart';
 import NotFound  from './pages/NotFound';
 
+import ARPage from './pages/ARPage';
+
 import { FilterProvider } from './context/FilterContext';
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
               <Route path="/contact"   element={<Contact />} />
               <Route path="/login"     element={<Login />} />
               <Route path="/cart"      element={<Cart />} />
+               <Route path="/ar/:id"    element={<ARPage />} />
               <Route path="*"          element={<NotFound />} />
             </Routes>
           </main>
