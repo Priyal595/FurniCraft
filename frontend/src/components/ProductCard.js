@@ -1,8 +1,10 @@
-
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
+
 import {
   Box,
   ShoppingCart,
@@ -13,9 +15,12 @@ import {
 import { useCartStore } from '../stores/cartStore';
 
 const ProductCard = ({ product }) => {
+  /* ─── state ─────────────────────────────────────── */
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const addItem = useCartStore((s) => s.addItem);
+  const addItem   = useCartStore((s) => s.addItem);
+  const navigate  = useNavigate();
 
+  /* ─── helpers ───────────────────────────────────── */
   const nextImage = () =>
     setCurrentImageIndex((idx) =>
       idx === product.images.length - 1 ? 0 : idx + 1
@@ -28,16 +33,26 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = () => {
     addItem({
-      id: product.id,
-      name: product.name,
+      id:    product.id,
+      name:  product.name,
       price: product.price,
       image: product.images[0],
     });
   };
 
+  const handleARView = () => {
+    if (product.model?.glb) {
+      navigate(`/ar/${product.id}`);
+    } else {
+      alert('Sorry, AR model not available for this product yet.');
+    }
+  };
+
+  /* ─── render ────────────────────────────────────── */
   return (
     <Card className="group hover:shadow-lg transition-shadow duration-300">
       <CardContent className="p-0">
+
         {/* ── image carousel ─────────────────────────── */}
         <div className="relative overflow-hidden rounded-t-lg">
           <img
@@ -77,7 +92,7 @@ const ProductCard = ({ product }) => {
 
           <div className="flex items-center justify-between mb-3">
             <span className="text-2xl font-bold text-primary">
-              ${product.price}
+              ₹{product.price}
             </span>
             <div className="flex items-center space-x-1 text-sm text-muted-foreground">
               <span>⭐</span>
@@ -94,7 +109,7 @@ const ProductCard = ({ product }) => {
             <Button
               variant="outline"
               className="w-full"
-              onClick={() => alert('AR View feature coming soon!')}
+              onClick={handleARView}
             >
               <Box size={16} className="mr-2" />
               AR View
