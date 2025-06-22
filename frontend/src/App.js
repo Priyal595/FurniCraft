@@ -13,6 +13,7 @@ import Cart      from './pages/Cart';
 import NotFound  from './pages/NotFound';
 
 import ARPage from './pages/ARPage';
+import StyleUpload from "./pages/StyleUpload";
 
 import { FilterProvider } from './context/FilterContext';
 
@@ -31,8 +32,10 @@ function App() {
               <Route path="/contact"   element={<Contact />} />
               <Route path="/login"     element={<Login />} />
               <Route path="/cart"      element={<Cart />} />
-               <Route path="/ar/:id"    element={<ARPage />} />
+              <Route path="/ar/:id"    element={<ARPage />} />
+              <Route path="/style-match" element={<StyleUpload />} />
               <Route path="*"          element={<NotFound />} />
+              
             </Routes>
           </main>
 

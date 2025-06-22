@@ -1,11 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Home,
-  Info,
-  Phone,
-  Package,
-  User,
-  ShoppingCart,
+  Home, Info, Phone, Package, User,
+  ShoppingCart, Palette
 } from 'lucide-react';
 
 import { useCartStore } from '../stores/cartStore';
@@ -13,24 +9,22 @@ import { useCartStore } from '../stores/cartStore';
 const Navbar = () => {
   const location = useLocation();
   const items = useCartStore((s) => s.items);
-  const cartItemsCount = items.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+  const cartItemsCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
   const navItems = [
-    { name: 'Home', path: '/', icon: Home },
-    { name: 'Products', path: '/products', icon: Package },
-    { name: 'About', path: '/about', icon: Info },
-    { name: 'Contact', path: '/contact', icon: Phone },
-    { name: 'Login', path: '/login', icon: User },
+    { name: 'Home',        path: '/',           icon: Home },
+    { name: 'Products',    path: '/products',   icon: Package },
+    { name: 'Style Match', path: '/style-match',icon: Palette },   // NEW
+    { name: 'About',       path: '/about',      icon: Info },
+    { name: 'Contact',     path: '/contact',    icon: Phone },
+    { name: 'Login',       path: '/login',      icon: User },
   ];
 
   return (
     <nav className="bg-white shadow-sm border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          {/* Logo */}
+          {/* ── Logo ─────────────────────────────────────────── */}
           <Link
             to="/"
             className="flex items-center text-2xl font-bold text-primary"
@@ -38,7 +32,7 @@ const Navbar = () => {
             FurniCraft
           </Link>
 
-          {/* Links */}
+          {/* ── Nav links ───────────────────────────────────── */}
           <div className="flex items-center space-x-8">
             {navItems.map(({ name, path, icon: Icon }) => (
               <Link
@@ -55,7 +49,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Cart */}
+            {/* ── Cart ──────────────────────────────────────── */}
             <Link
               to="/cart"
               className="relative flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
